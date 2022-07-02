@@ -16,7 +16,6 @@ ItemWidget::~ItemWidget()
 
 void ItemWidget::showItem(){
     if(!isShowed){
-        ui->numLabel->setText("??????");
         isShowed = true;
     }
     return;

@@ -9,9 +9,11 @@
 #ifndef UI_ITEMWIDGET_H
 #define UI_ITEMWIDGET_H
 
+#include <QtCore/QLocale>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -19,27 +21,30 @@ QT_BEGIN_NAMESPACE
 class Ui_ItemWidget
 {
 public:
-    QLineEdit *numLabel;
+    QGridLayout *gridLayout;
+    QLabel *numLabel;
 
     void setupUi(QWidget *ItemWidget)
     {
         if (ItemWidget->objectName().isEmpty())
             ItemWidget->setObjectName(QString::fromUtf8("ItemWidget"));
-        ItemWidget->resize(211, 94);
-        ItemWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        numLabel = new QLineEdit(ItemWidget);
+        ItemWidget->resize(176, 76);
+        ItemWidget->setStyleSheet(QString::fromUtf8("background-color: gray;\n"
+"background-color: rgb(170, 170, 255);"));
+        ItemWidget->setLocale(QLocale(QLocale::Russian, QLocale::Russia));
+        gridLayout = new QGridLayout(ItemWidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(2, 2, 2, 2);
+        numLabel = new QLabel(ItemWidget);
         numLabel->setObjectName(QString::fromUtf8("numLabel"));
-        numLabel->setGeometry(QRect(10, 10, 191, 71));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(numLabel->sizePolicy().hasHeightForWidth());
-        numLabel->setSizePolicy(sizePolicy);
+        numLabel->setEnabled(true);
         QFont font;
-        font.setBold(true);
+        font.setPointSize(12);
         numLabel->setFont(font);
         numLabel->setAlignment(Qt::AlignCenter);
-        numLabel->setReadOnly(true);
+
+        gridLayout->addWidget(numLabel, 0, 0, 1, 1);
+
 
         retranslateUi(ItemWidget);
 
@@ -49,7 +54,7 @@ public:
     void retranslateUi(QWidget *ItemWidget)
     {
         ItemWidget->setWindowTitle(QCoreApplication::translate("ItemWidget", "Form", nullptr));
-        numLabel->setPlaceholderText(QCoreApplication::translate("ItemWidget", "?????????????", nullptr));
+        numLabel->setText(QCoreApplication::translate("ItemWidget", "\342\200\242\342\200\242\342\200\242\342\200\242", nullptr));
     } // retranslateUi
 
 };

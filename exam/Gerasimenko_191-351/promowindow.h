@@ -16,6 +16,11 @@ public:
     explicit PromoWindow(QWidget *parent = nullptr);
     ~PromoWindow();
     void addItemInList(const int number);
+private slots:
+    void on_pushButton_clicked();
+
+    void on_itemListWidget_itemClicked(QListWidgetItem *item);
+
 private:
     Ui::PromoWindow *ui;
 };

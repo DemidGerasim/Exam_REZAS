@@ -2,62 +2,76 @@
 <ui version="4.0">
  <class>PromoWindow</class>
  <widget class="QMainWindow" name="PromoWindow">
+  <property name="enabled">
+   <bool>false</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>473</width>
-    <height>511</height>
+    <width>536</width>
+    <height>553</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Промокоды</string>
+  <property name="font">
+   <font>
+    <family>Tahoma</family>
+    <pointsize>12</pointsize>
+   </font>
   </property>
-  <property name="autoFillBackground">
-   <bool>false</bool>
+  <property name="windowTitle">
+   <string>Игра</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255,255,255);</string>
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>151</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(128, 128, 128);</string>
-    </property>
-    <property name="text">
-     <string>Открыть код</string>
-    </property>
-   </widget>
-   <widget class="QListWidget" name="itemListWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>80</y>
-      <width>451</width>
-      <height>381</height>
-     </rect>
-    </property>
-   </widget>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QPushButton" name="pushButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>18</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(175, 175, 175);</string>
+      </property>
+      <property name="text">
+       <string>Получить промокод</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QListWidget" name="itemListWidget">
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(0, 0, 0);</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>473</width>
+     <width>536</width>
      <height>21</height>
     </rect>
    </property>

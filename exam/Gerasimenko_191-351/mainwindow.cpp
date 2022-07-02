@@ -6,18 +6,18 @@
 
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(QWidget *parent) //создаём окно
     : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
-  ui->passwordEdit->setEchoMode(QLineEdit::Password);
+  ui->passwordEdit->setEchoMode(QLineEdit::Password);// Во время воода пароля отображаются точки, а не цифры
 }
 
-MainWindow::~MainWindow() { delete ui; }
+MainWindow::~MainWindow() { delete ui; } //деструктор (удаление окна)
 
 void MainWindow::on_loginButton_clicked() {
 
-  const auto PASSWORD = ui->passwordEdit->text();
-  const auto GOOD_PASSWORD = "336431";
+  const auto PASSWORD = ui->passwordEdit->text(); // сравниваем то что в окне ввода пароля
+  const auto GOOD_PASSWORD = "336431"; // с заданным паролем
 
   if (PASSWORD == GOOD_PASSWORD) {
     auto nextWindow = new PromoWindow();
@@ -27,13 +27,7 @@ void MainWindow::on_loginButton_clicked() {
     return;
   }
 
-  QMessageBox::warning(this, "Login", "Wrong password");
+  QMessageBox::warning(this, "Login", "Wrong password"); // если пароль неверный выводим сообщение
 }
 
-//void MainWindow::on_passwordEdit_textChanged(const QString &text) {
-//  if (text.length() > 4)
-//    ui->loginButton->setEnabled(true);
-//  else
-//    ui->loginButton->setEnabled(false);
-//}
 
