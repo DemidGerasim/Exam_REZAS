@@ -1,7 +1,9 @@
 #include "mainwindow.h"
+#include "promowindow.h"
+
 #include <QFile>
 #include <QMessageBox>
-#include "promowindow.h"
+
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -13,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow() { delete ui; }
 
 void MainWindow::on_loginButton_clicked() {
+
   const auto PASSWORD = ui->passwordEdit->text();
   const auto GOOD_PASSWORD = "336431";
 
@@ -27,10 +30,10 @@ void MainWindow::on_loginButton_clicked() {
   QMessageBox::warning(this, "Login", "Wrong password");
 }
 
-void MainWindow::on_passwordEdit_textChanged(const QString &text) {
-  if (text.length() > 4)
-    ui->loginButton->setEnabled(true);
-  else
-    ui->loginButton->setEnabled(false);
-}
+//void MainWindow::on_passwordEdit_textChanged(const QString &text) {
+//  if (text.length() > 4)
+//    ui->loginButton->setEnabled(true);
+//  else
+//    ui->loginButton->setEnabled(false);
+//}
 
