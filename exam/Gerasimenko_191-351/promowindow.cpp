@@ -45,6 +45,6 @@ void PromoWindow::on_itemListWidget_itemClicked(QListWidgetItem *item)
 {
     auto itemWidget = dynamic_cast<ItemWidget*>(
            ui->itemListWidget->itemWidget(item));
-    auto showpromo = itemWidget->showItem();
+    //auto showpromo = itemWidget->showItem();
 }
 

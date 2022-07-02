@@ -17,9 +17,10 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
 private slots:
  void on_loginButton_clicked();
 
- void on_passwordEdit_textChanged(const QString &text);
+ //void on_passwordEdit_textChanged(const QString &text);
 };
 #endif // MAINWINDOW_H
